@@ -1,0 +1,137 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+html, body {
+  height: 100%;
+  font-family: Inter, sans-serif;
+  background: radial-gradient(circle,
+    rgb(221, 49, 92) 28%,
+    rgb(193, 43, 146) 69%,
+    rgba(179, 4, 59, 1) 96%);
+  overflow-x: hidden;
+
+}
+
+/* CONTAINER */
+[class*="__container"] {
+  max-width: 1250px;
+  margin: 0 auto 100px;
+  padding: 0 15px;
+}
+.country__box{
+  margin-bottom: 50px;
+}
+/* WELCOME */
+.country__welcome {
+  margin-bottom: 50px;
+  margin-top: 20px;
+  text-align: center;
+}
+.welcome-country__subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(113, 28, 155);
+}
+
+/* GRID */
+.country__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 100px;
+  row-gap: 100px; 
+}
+
+/* CARD */
+.card-country {
+  position: relative;
+  min-height: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE */
+.card-country__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* INFO */
+.card-country__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-top-right-radius: 12px;
+  display: flex;
+  min-width: 20%;
+}
+
+/* TEXT */
+.card-country__text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #168376;
+  position: relative;
+}
+
+/* HOVER */
+.card-country:hover .card-country__image {
+  transform: scale(1.25);
+  transition: all 0.7s ease-in-out; 
+}
+.link-span span{
+  position: relative;
+  display: inline-block;
+	line-height: 1.4;
+}
+.link-span span::after{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  transition: all 0.5s;
+  left: 0;
+  bottom: 0;
+  background-color:#1da759;
+  
+}
+.link-span:hover span::after{
+  width: 100%;
+}
+@media(max-width:910.98px){
+.country__columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 70px;
+  row-gap: 70px; 
+}
+}
+
+@media(max-width:550.98px){
+.country__columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 70px;
+  row-gap: 70px; 
+}
+}
